@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+matplotlib = "*"
+requests = "*"
+django = "==3.0.7"
+numpy = "*"
+django-bootstrap4 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

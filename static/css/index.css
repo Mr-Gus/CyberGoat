@@ -1,0 +1,32 @@
+body{
+text-align: center;
+}
+
+
+input{
+  width:25%;
+}
+
+
+.creditCalculator{
+  border-radius: 90px;
+  border-style: inset;
+  border-color:red;
+  background-color: #9c9a9a;
+  padding:5%;
+
+}
+
+
+.error{
+  color:red;
+}
+
+
+
+.btn{
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  background-color: #e7091c;
+  }

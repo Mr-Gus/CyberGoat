@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{% block content %}
+<br><br><br><br>
+<link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}"/>
+
+
+<br><br>
+  <!--Payoff Calculator-->
+  <div class="creditCalculator">
+  <h2>Debt Payoff Calculator </h2>
+  <br>
+  <form method='POST' action ="{% url 'home' %}">
+     <label for="balance">Current balance:</label>
+          <input type="number" step="any" name="balance" maxlength="11" placeholder="6200.00" />
+          <br>
+           <label for="apr">APR (0 to 40%):</label>
+        <input type="number" step="any" name="apr" maxlength="6" min="0" max="40" class="apr" placeholder="19.02"/>
+        <br>
+         <label for="payment">Monthly payment:</label>
+      <input type="number" step="any" name="minimum" maxlength="11" placeholder="200.00"/>
+        <br><br><br><br>
+        <input type="submit" class="btn" value="Calculate" />
+        {% csrf_token %}
+      </form>
+
+      <br><br><br>
+      <div class="graph">
+        <img class="graph" src="{% static "images/graph.png" %}" alt="">
+      
+      {%if report%}
+      <br><br>
+     <b><p>{{report}}</p></b> 
+      {%endif%}
+
+      {%if error%}
+     <b><p class="error">{{error}}</p></b> 
+      {%endif%}
+</div> 
+<br><br>    
+{% endblock %}
+

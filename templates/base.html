@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% load bootstrap4 %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CyberGOAT</title>
+<link id="icon" rel="shortcut icon" href="{% static "images/goat.png" %}">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/master.css" %}"/>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+    <a class="navbar-brand" href="{% url 'home' %}">CyberGOAT <img class="logo" src="{% static "images/goat.png" alt="CG" %}"></a>
+
+
+
+  <!-- Links -->
+  <ul class="navbar-nav navbar-right ml-auto" id='navbar'>
+    <li class="nav navbar-right">
+      <ul class='nav navbar-nav '>
+
+
+
+          {% if user.is_authenticated %}
+<button >
+          <li><a class="btn"  href='{% url 'accounts:logout' %}'>Logout</a></li>
+</button>
+          {% else %}
+          <button >
+            <a class="btn" href='{%url 'about'%}'>About Us</a>
+  </button>
+<button >
+          <a class="btn" href='{%url 'accounts:signup'%}'>Sign Up</a>
+</button>
+
+    </li>
+  </ul>
+  <button >
+            <a class="btn" href='{%url 'accounts:login'%}'>Login</a>
+  </button>
+            {% endif %}
+
+</nav>
+
+    <div class='container mycontent'>
+    {% block content %}
+
+    {% endblock %}
+</div>
+  </body>
+</html>

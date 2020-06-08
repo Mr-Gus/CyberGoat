@@ -1,0 +1,32 @@
+body {
+ background-color: #1F2027;
+}
+
+
+.btn{
+text-align: center;
+color: rgb(255, 255, 255);
+font-weight: bold;
+}
+
+button{
+  border-radius:90px;
+  background-color: #e7091c;
+  border-color: black;
+  margin-left: 4px;
+
+}
+
+.logo{
+height: 45px;
+}
+
+h1, .navbar-brand{
+  font-family: BankFuturistic;
+  font-weight: bold;
+
+}
+
+.navbar-brand{
+  padding-right: 3%;
+}

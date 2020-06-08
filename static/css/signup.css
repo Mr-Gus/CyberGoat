@@ -1,0 +1,21 @@
+.signup{
+  color:rgb(219, 219, 219);
+  font-weight: bold;
+  font-family: BankFuturistic;
+  text-align: center;
+  background-color: #9c9a9a;
+  border-radius: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+    position: relative;
+    top: 50%;
+  width:50%;
+  border-style: inset;
+  border-color:red;
+  padding: 5%;
+}
+
+h1{
+  color:white;
+  font-family: BankFuturistic;
+}
