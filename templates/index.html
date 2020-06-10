@@ -9,13 +9,14 @@
 <br><br>
   <!--Payoff Calculator-->
   <div class="creditCalculator">
+    <br><br>
   <h2>Debt Payoff Calculator </h2>
   <br>
   <form method='POST' action ="{% url 'home' %}">
-     <label for="balance">Current balance:</label>
+     <label for="balance">Current balance : </label>
           <input type="number" step="any" name="balance" maxlength="11" placeholder="6200.00" />
           <br>
-           <label for="apr">APR (0 to 40%):</label>
+           <label for="apr">APR ( 0 to 40% ) :</label>
         <input type="number" step="any" name="apr" maxlength="6" min="0" max="40" class="apr" placeholder="19.02"/>
         <br>
          <label for="payment">Monthly payment:</label>
@@ -27,7 +28,7 @@
 
       <br><br><br>
       <div class="graph">
-        <img class="graph" src="{% static "images/graph.png" %}" alt="">
+        <img class="graph" src="{% static "images/graph.png" %}" alt="Try me! Calculate your debt.">
       
       {%if report%}
       <br><br>

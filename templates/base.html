@@ -24,11 +24,15 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand -->
     <a class="navbar-brand" href="{% url 'home' %}">CyberGOAT <img class="logo" src="{% static "images/goat.png" alt="CG" %}"></a>
+    <ul class="navbar-nav">
 
+      <li class="navbar-nav navbar-left"><a href="{%url 'stocks' %}">Stocks</a></li>
+
+    </ul>
 
 
   <!-- Links -->
-  <ul class="navbar-nav navbar-right ml-auto" id='navbar'>
+  <ul class="navbar-nav navbar-right ml-auto" >
     <li class="nav navbar-right">
       <ul class='nav navbar-nav '>
 

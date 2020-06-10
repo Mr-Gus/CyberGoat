@@ -23,6 +23,7 @@ urlpatterns = [
     url('^admin/', admin.site.urls),
     url(r'^$', views.home, name = 'home'),
     url(r'^about/', views.about, name='about'),
+    url(r'^stocks/', views.stockPage, name='stocks'),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
     url(r'^accounts/',include('django.contrib.auth.urls')),
     url(r'^test/', views.login, name='test'),

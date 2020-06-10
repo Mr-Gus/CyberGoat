@@ -9,6 +9,8 @@ requests = "*"
 django = "==3.0.7"
 numpy = "*"
 django-bootstrap4 = "*"
+mysqlclient = "*"
+yfinance = "*"
 
 [dev-packages]
 

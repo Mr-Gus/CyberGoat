@@ -21,12 +21,20 @@ button{
 height: 45px;
 }
 
-h1, .navbar-brand{
+h1, .navbar-brand, a{
   font-family: BankFuturistic;
   font-weight: bold;
-
+  font-size: 20px;
+  color: white;
 }
 
 .navbar-brand{
-  padding-right: 3%;
+  padding-right: 5px;  
 }
+
+.navbar-left{
+  border-width: thin;
+  border-right: lightgray;
+  
+}
+

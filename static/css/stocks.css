@@ -1,0 +1,33 @@
+h1, p, form, h3{
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.btn{
+    background-color: #ee2525;
+}
+
+
+
+.stockCalculator{
+
+    border-radius: 90px;
+    background-color: #9c9a9a;
+    padding: 2%;
+    border-style: inset;
+    border-color:red;
+
+}
+
+label{
+
+    text-align: start;
+}
+
+/* Need to define banner */
+.stockContent{
+ 
+}
