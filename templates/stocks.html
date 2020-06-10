@@ -7,21 +7,22 @@
 <p>
 Investings in the stock market can be a great way to earn income. Often times we don't know where
 to start or how much is ideal for a decent return. This calculator is designed to help fix that scenario by
-providing potential stock traders the ability to see their returns on any stock they're speculating buying or selling.  
+providing potential stock traders the ability to see their returns on any stock they're speculating on buying or selling.  
 </p>
 <br><br>
 <div class="stockCalculator">
+  <br>
   <h1>Stock Scenario</h1>
-    <br>
+    
   <br>
   <form method='POST' action ="{% url 'stocks' %}">
      <label for="price_paid">Price Paid: </label>
           <input type="number" step="any" name="price_paid" maxlength="11" placeholder="25.00" />
           <br>
-           <label for="quantity">Quantity:</label>
+           <label for="quantity">Quantity :</label>
         <input type="number" name="quantity" maxlength="6" min="1"  class="quantity" placeholder="5"/>
         <br>
-         <label for="sell_price">Selling Price:</label>
+         <label for="sell_price">Price Sold:</label>
       <input type="number" step="any" name="sell_price" maxlength="11" placeholder="35.00"/>
         <br><br><br>
         <input type="submit" class="btn" value="Calculate" />

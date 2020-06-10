@@ -27,11 +27,13 @@
       </form>
 
       <br><br><br>
+   
+      {%if report%}
       <div class="graph">
         <img class="graph" src="{% static "images/graph.png" %}" alt="Try me! Calculate your debt.">
       
-      {%if report%}
       <br><br>
+      
      <b><p>{{report}}</p></b> 
       {%endif%}
 
@@ -39,6 +41,6 @@
      <b><p class="error">{{error}}</p></b> 
       {%endif%}
 </div> 
-<br><br>    
+    
 {% endblock %}
 
