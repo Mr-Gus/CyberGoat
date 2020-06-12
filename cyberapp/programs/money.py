@@ -1,5 +1,6 @@
 from matplotlib import pyplot as plt
 import numpy as np
+import seaborn
 
 def interest_calc(apr, balance, minimum):
 

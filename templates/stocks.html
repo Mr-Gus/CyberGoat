@@ -19,7 +19,7 @@ providing potential stock traders the ability to see their returns on any stock 
      <label for="price_paid">Price Paid: </label>
           <input type="number" step="any" name="price_paid" maxlength="11" placeholder="25.00" />
           <br>
-           <label for="quantity">Quantity :</label>
+           <label for="quantity">Quantity x:</label>
         <input type="number" name="quantity" maxlength="6" min="1"  class="quantity" placeholder="5"/>
         <br>
          <label for="sell_price">Price Sold:</label>
@@ -46,10 +46,39 @@ providing potential stock traders the ability to see their returns on any stock 
 </div> 
 
 <br><br><br><br><br>
+
+
+<form method="POST" action ="{% url 'stocks' %}">
+  <label for="stock_search">Search for a company:</label>
+
+  <input type="text"  name="stock_search" placeholder="{{display1.symbol}}"/>
+  <input type="submit" class="btn" value="GO" />
+  {% csrf_token %}
+</form>
+<br>
+{%if display1%}
 <div class="stockContent">
+ <h4>{{display1.shortName}} ({{display1.symbol}})</h4>
+ <br>
+ <h5>Website: <a href="{{display1.website}}" >Click Here</a></h5>
+ <br>
+<p><img class="img" src={{display1.logo_url}}/ alt="No Pic"/></p>
+<br>
+{% if display1.dividendRate %}
+<h5>Dividend: {{display1.dividendRate}}% </h5>
+ {%endif %}
+<h5> Sector: {{display1.sector}}</h5>
+<br>
+<h4>Perfomance: </h4>
+<br>
+<h5>Ask: ${{display1.ask}}</h5>
+<h5>Bid: ${{display1.bid}}</h5>
+<h5>52 Week High: ${{display1.fiftyTwoWeekHigh}}</h5>
+<h5>52 Week Low: ${{display1.fiftyTwoWeekLow}}</h5>
 
-  <h3>More Coming Soon..</h3>
-
+<br>
+  <h4>About:</h4>
+<p>{{display1.longBusinessSummary}}</p>
 </div>
-
+{%endif%}
 {% endblock %}

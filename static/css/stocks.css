@@ -1,4 +1,4 @@
-h1, p, form, h3{
+h1, p, form, h3, h4, h5{
     color: white;
     text-align: center;
     font-weight: 500;
@@ -15,7 +15,7 @@ h1, p, form, h3{
 .stockCalculator{
 
     border-radius: 90px;
-    background-color: #9c9a9a;
+    background-color: #4d4b4b;
     padding: 2%;
     border-style: inset;
     border-color:red;
@@ -27,7 +27,20 @@ label{
     text-align: start;
 }
 
-/* Need to define banner */
+
 .stockContent{
- 
+    background-color: #4d4b4b;
+    padding: 10%;
+    border-radius: 90px;
+    border-style: inset;
+    border-color:red;
+
+  
+   
+
+}
+
+
+.img{
+    height:20%;
 }

@@ -2,8 +2,14 @@
 {%load static%}
 
 {% block content %}
-<br><br><br><br>
 <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}"/>
+<br><br><br><br>
+
+  <form   method="POST" action="{% url 'members' %}">
+<input class="members" type="text" name = "id" >
+{%csrf_token%}
+<input class="members" type="submit" value="Enter"/>
+</form>
 
 
 <br><br>

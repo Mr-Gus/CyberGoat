@@ -11,6 +11,8 @@ numpy = "*"
 django-bootstrap4 = "*"
 mysqlclient = "*"
 yfinance = "*"
+seaborn = "*"
+lxml = "*"
 
 [dev-packages]
 
