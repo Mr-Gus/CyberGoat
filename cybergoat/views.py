@@ -40,7 +40,7 @@ def stockPage(request):
 
             return render(request, 'stocks.html', {'total_gain':total_gain,'display1':display1})   
         
-        except Exception:
+        except:
             pass
 
         try:
