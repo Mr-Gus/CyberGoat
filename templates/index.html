@@ -11,7 +11,10 @@
 <input class="members" type="submit" value="Enter"/>
 </form>
 
-
+<p>Welcome to CyberGOAT's finance section. This area is being built to help assist individuals/entities 
+  with planning debt or future revenue. While still in its early stages, please take advantage of the debt payoff calculator created
+  just for you below. Real input will generate a beautiful graph and timeline for payoff.
+</p>
 <br><br>
   <!--Payoff Calculator-->
   <div class="creditCalculator">
@@ -19,13 +22,13 @@
   <h2>Debt Payoff Calculator </h2>
   <br>
   <form method='POST' action ="{% url 'home' %}">
-     <label for="balance">Current balance : </label>
+     <label for="balance">Current Balance  :</label>
           <input type="number" step="any" name="balance" maxlength="11" placeholder="6200.00" />
           <br>
-           <label for="apr">APR ( 0 to 40% ) :</label>
+           <label for="apr">APR ( 0 to 40% )  :</label>
         <input type="number" step="any" name="apr" maxlength="6" min="0" max="40" class="apr" placeholder="19.02"/>
         <br>
-         <label for="payment">Monthly payment:</label>
+         <label for="payment">Monthly Payment:</label>
       <input type="number" step="any" name="minimum" maxlength="11" placeholder="200.00"/>
         <br><br><br><br>
         <input type="submit" class="btn" value="Calculate" />

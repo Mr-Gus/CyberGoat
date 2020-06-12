@@ -57,6 +57,10 @@ def stockPage(request):
     return render(request, 'stocks.html',{'display1':display1})
 
 
+def weather(request):
+    return render(request, 'weather.html',{})
+
+
 def member(request):
     #Will be replaced with different logging mechanism
     if request.method == 'POST':
@@ -70,9 +74,11 @@ def member(request):
 def about(request):
     return render(request, 'about.html', {})
 
+
 @login_required
 def login(request):
     return render(request,'test.html', {})
+
 
 @login_required
 def logout(request):

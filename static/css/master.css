@@ -35,6 +35,7 @@ h1, .navbar-brand, a{
 .navbar-left{
   border-width: thin;
   border-right: lightgray;
+  padding-right: 15px;
   
 }
 

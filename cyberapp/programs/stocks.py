@@ -22,13 +22,32 @@ def stock_calc(price_paid, quantity, sell_price):
     return total_gain
 
 
-stocks = ['HON','RSG','MSFT','AAPL','C','JPM','V','NKE','LMT','LDOS','TMUS','ABT','PYPL','SBUX','MS']
-stock_pick = random.choice(stocks)
+stocks = ['HON','MSFT','AAPL','JPM','V','NKE','LMT','LDOS','TMUS','ABT','PYPL','SBUX','T',
+ 'MA','AAL','DIS','ABBV','NOW','DXCM']
 
-def stock_search(search=stock_pick):
-
+def stock_search(search=random.choice(stocks)):
+    
     display1 = yf.Ticker(search)
     display1 = display1.info
-  
+    try:
+        if display1['dividendYield']:
+            display1['dividendYield'] *= 100
+            display1['dividendYield'] = float('{:.2f}'.format(display1['dividendYield']))
+        if display1['bookValue']:
+            display1['bookValue'] = float('{:.2f}'.format(display1['bookValue']))
+        display1['ask']= '{:,.2f}'.format(display1['ask'])
+        display1['bid'] = '{:,.2f}'.format(display1['bid'])
+
+        display1['dayHigh'] = '{:,.2f}'.format(display1['dayHigh'])
+        display1['dayLow'] = '{:,.2f}'.format(display1['dayLow'])
+
+        display1['fiftyTwoWeekHigh'] = '{:,.2f}'.format(display1['fiftyTwoWeekHigh'])
+        display1['fiftyTwoWeekLow'] = '{:,.2f}'.format(display1['fiftyTwoWeekLow'])
+
+    except Exception:
+        pass 
+
     return display1
 
+
+stock_search()

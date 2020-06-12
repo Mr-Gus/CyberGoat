@@ -64,18 +64,29 @@ providing potential stock traders the ability to see their returns on any stock 
  <br>
 <p><img class="img" src={{display1.logo_url}}/ alt="No Pic"/></p>
 <br>
-{% if display1.dividendRate %}
-<h5>Dividend: {{display1.dividendRate}}% </h5>
+{% if display1.dividendYield %}
+<h5>Dividend: {{display1.dividendYield}}% </h5>
  {%endif %}
+ <h5>Book Value: {{display1.bookValue}}% </h5>
+
 <h5> Sector: {{display1.sector}}</h5>
 <br>
 <h4>Perfomance: </h4>
 <br>
 <h5>Ask: ${{display1.ask}}</h5>
 <h5>Bid: ${{display1.bid}}</h5>
+<br><br>
+<h5>Day High: ${{display1.dayHigh}}</h5>
+<h5>Day Low: ${{display1.dayLow}}</h5>
+<br><br>
+
 <h5>52 Week High: ${{display1.fiftyTwoWeekHigh}}</h5>
 <h5>52 Week Low: ${{display1.fiftyTwoWeekLow}}</h5>
 
+{%if display1.fiveYearAverageReturn%}
+<br><br>
+{{display1.fiveYearAverageReturn}}
+{%endif%}
 <br>
   <h4>About:</h4>
 <p>{{display1.longBusinessSummary}}</p>
