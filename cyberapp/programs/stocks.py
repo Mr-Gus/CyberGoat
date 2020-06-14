@@ -18,12 +18,13 @@ def percent_change(original, final):
 
 def stock_calc(price_paid, quantity, sell_price):
     total_gain= (sell_price - price_paid) * quantity
+    amount_invested = price_paid * quantity
 
-    return total_gain
+    return total_gain, amount_invested
 
 
-stocks = ['HON','MSFT','AAPL','JPM','V','NKE','LMT','LDOS','TMUS','ABT','PYPL','SBUX','T',
- 'MA','AAL','DIS','ABBV','NOW','DXCM']
+stocks = ['MSFT','AAPL','JPM','V','NKE','LMT','LDOS','ABT','PYPL','SBUX','T',
+ 'MA','AAL','DIS','ABBV','NOW','DXCM', 'ADDYY','WMT']
 
 def stock_search(search=random.choice(stocks)):
     

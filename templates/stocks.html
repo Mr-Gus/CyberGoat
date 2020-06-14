@@ -4,6 +4,8 @@
 <link rel="stylesheet" type="text/css" href="{% static "css/stocks.css" %}"/>
 
 <br><br><br>
+<h1>The Stock Section</h1>
+<br><br><br>
 <p>
 Investings in the stock market can be a great way to earn income. Often times we don't know where
 to start or how much is ideal for a decent return. This calculator is designed to help fix that scenario by
@@ -34,7 +36,12 @@ providing potential stock traders the ability to see their returns on any stock 
       {% if total_gain %}
      <p>Estimated returns: ${{total_gain}}</p>
       {% endif %}
-     
+
+      {% if amount_invested%}
+      <p>Amount invested: ${{amount_invested}}</p>
+      {% endif %}
+
+
       {%if report%}
       <br><br>
      <b><p>{{report}}</p></b> 
@@ -47,9 +54,10 @@ providing potential stock traders the ability to see their returns on any stock 
 
 <br><br><br><br><br>
 
-
+<h3>Company Search</h3>
+<br><br>
 <form method="POST" action ="{% url 'stocks' %}">
-  <label for="stock_search">Search for a company:</label>
+  <label for="stock_search">Enter a symbol:</label>
 
   <input type="text"  name="stock_search" placeholder="{{display1.symbol}}"/>
   <input type="submit" class="btn" value="GO" />
@@ -62,7 +70,7 @@ providing potential stock traders the ability to see their returns on any stock 
  <br>
  <h5>Website: <a href="{{display1.website}}" >Click Here</a></h5>
  <br>
-<p><img class="img" src={{display1.logo_url}}/ alt="No Pic"/></p>
+<p><img class="img" src={{display1.logo_url}}/ alt="CyberGOAT - No Pic"/></p>
 <br>
 {% if display1.dividendYield %}
 <h5>Dividend: {{display1.dividendYield}}% </h5>

@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^about/', views.about, name='about'),
     url(r'^stocks/', views.stockPage, name='stocks'),
     url(r'^weather/', views.weather, name='weather'),
-
+    url(r'finance/',views.finance, name='finance'),
     url(r'member/', views.member, name='members'),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
     url(r'^accounts/',include('django.contrib.auth.urls')),

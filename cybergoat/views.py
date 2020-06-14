@@ -1,28 +1,13 @@
 from django.shortcuts import render
 from cyberapp.programs import money, stocks, members
 from django.contrib.auth.decorators import login_required
+import datetime
 import subprocess
 import os
 
 
 def home(request):
-    try:
-        #if os.path.getsize('static/images/graph.png') > 0:
-        subprocess.call('rm static/images/graph.png',shell=True)
-    except Exception:
-        pass
-    if request.method == 'POST':
-        try:
-            balance = float(request.POST['balance'])
-            apr = float(request.POST['apr'])
-            minimum = float(request.POST['minimum'])
-            graph, report = money.interest_calc(apr, balance, minimum)    
-            
-            return render(request, 'index.html',{'graph':graph, 'report':report})
-        
-        except Exception:
-            error = "Error! Input not understood."
-            return render(request, 'index.html',{'error':error})
+   
 
 
     return render(request, 'index.html',{})
@@ -35,10 +20,10 @@ def stockPage(request):
             price_paid = float(request.POST['price_paid'])
             quantity = int(request.POST['quantity'])
             sell_price = float(request.POST['sell_price'])
-            total_gain = stocks.stock_calc(price_paid, quantity, sell_price)
+            total_gain, amount_invested = stocks.stock_calc(price_paid, quantity, sell_price)
             total_gain = '{:,.2f} | Change: {:,.2f}%'.format(total_gain, stocks.percent_change(price_paid, sell_price))
-
-            return render(request, 'stocks.html', {'total_gain':total_gain,'display1':display1})   
+            amount_invested = '{:,.2f}'.format(amount_invested)
+            return render(request, 'stocks.html', {'total_gain':total_gain,'amount_invested':amount_invested, 'display1':display1})   
         
         except:
             pass
@@ -55,6 +40,30 @@ def stockPage(request):
             
 
     return render(request, 'stocks.html',{'display1':display1})
+
+
+def finance(request):
+    month = datetime.datetime.now()
+    month = month.strftime("%B")    
+
+    try:
+        subprocess.call('rm static/images/graph.png',shell=True)
+    except Exception:
+        pass
+    if request.method == 'POST':
+        try:
+            balance = float(request.POST['balance'])
+            apr = float(request.POST['apr'])
+            minimum = float(request.POST['minimum'])
+            graph, report = money.interest_calc(apr, balance, minimum)
+            
+            return render(request, 'finance.html',{'graph':graph, 'report':report})
+        
+        except Exception:
+            error = "Error! Input not understood."
+            return render(request, 'finance.html',{'error':error})
+
+    return render(request, 'finance.html',{'month':month})
 
 
 def weather(request):

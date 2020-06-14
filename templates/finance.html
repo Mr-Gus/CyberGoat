@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+<link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static "css/finance.css" %}"/>
+<br><br><br>
+<h1>The Finance Section</h1>
+<br><br><br>
+
+  <form   method="POST" action="{% url 'members' %}">
+<input class="members" type="text" name = "id" >
+{%csrf_token%}
+<input class="members" type="submit" value="Enter"/>
+</form>
+
+<p>Welcome to CyberGOAT's finance section. This area is being built to help assist individuals/entities 
+  with planning debt or future revenue. While still in its early stages, please take advantage of the debt payoff calculator created
+  just for you below. Real input will generate a beautiful graph and timeline for payoff.
+</p>
+<br><br>
+  <!--Payoff Calculator-->
+  <div class="creditCalculator">
+    <br><br>
+  <h2>Debt Payoff Calculator </h2>
+  <br>
+  <form method='POST' action ="{% url 'finance' %}">
+     <label for="balance">Current Balance  :</label>
+          <input type="number" step="any" name="balance" maxlength="11" placeholder="6200.00" />
+          <br>
+           <label for="apr">APR ( 0 to 40% )  :</label>
+        <input type="number" step="any" name="apr" maxlength="6" min="0" max="40" class="apr" placeholder="19.02"/>
+        <br>
+         <label for="payment">Montly Payment:</label>
+      <input type="number" step="any" name="minimum" maxlength="11" placeholder="200.00"/>
+        <br><br><br><br>
+        <input type="submit" class="btn" value="Calculate" />
+        {% csrf_token %}
+      </form>
+
+      <br><br><br>
+   
+      {%if report%}
+      <div class="graph">
+        <img class="graph" src="{% static "images/graph.png" %}" alt="Try me! Calculate your debt.">
+      
+      <br><br>
+      
+     <b><p>{{report}}</p></b> 
+      {%endif%}
+
+      {%if error%}
+     <b><p class="error">{{error}}</p></b> 
+      {%endif%}
+</div> 
+    <br><br><br><br><br><br>
+
+
+
+
+
+    <div class="top">
+      <div class="budget">
+          <div class="budget__title">
+              Available Budget in <span class="budget__title--month">{{month}}</span>:
+          </div>
+          
+          <div class="budget__value">+ 4,100</div>
+          
+          <div class="budget__income clearfix">
+              <div class="budget__income--text">Income</div>
+              <div class="right">
+                  <div class="budget__income--value">+ 2,300.00</div>
+                  <div class="budget__income--percentage">&nbsp;</div>
+              </div>
+          </div>
+          
+          <div class="budget__expenses clearfix">
+              <div class="budget__expenses--text">Expenses</div>
+              <div class="right clearfix">
+                  <div class="budget__expenses--value">- 1,954.36</div>
+                  <div class="budget__expenses--percentage">45%</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
+  
+  <div class="bottom">
+      <div class="add">
+          <div class="add__container">
+              <select class="add__type">
+                  <option value="inc" selected>+</option>
+                  <option value="exp">-</option>
+              </select>
+              <input type="text" class="add__description" placeholder="Add description">
+              <input type="number" class="add__value" placeholder="Value">
+              <button class="add__btn"><i class="ion-ios-checkmark-outline"></i></button>
+          </div>
+      </div>
+      
+      <div class="container clearfix">
+          <div class="income">
+              <h2 class="icome__title">Income</h2>
+              
+              <div class="income__list">
+                 
+                  
+                  <div class="item clearfix" id="income-0">
+                      <div class="item__description">Salary</div>
+                      <div class="right clearfix">
+                          <div class="item__value">+ 2,100.00</div>
+                          <div class="item__delete">
+                              <button class="item__delete--btn">
+                                  <i class="ion-ios-close-outline"></i>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="item clearfix" id="income-1">
+                      <div class="item__description">Investment returns</div>
+                      <div class="right clearfix">
+                          <div class="item__value">+ 500.00</div>
+                          <div class="item__delete">
+                              <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  
+              </div>
+          </div>
+          
+          
+          
+          <div class="expenses">
+              <h2 class="expenses__title">Expenses</h2>
+              
+              <div class="expenses__list">
+                 
+                  
+                  <div class="item clearfix" id="expense-0">
+                      <div class="item__description">Apartment rent</div>
+                      <div class="right clearfix">
+                          <div class="item__value">- 1600</div>
+                          <div class="item__percentage">28%</div>
+                          <div class="item__delete">
+                              <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="item clearfix" id="expense-1">
+                      <div class="item__description">Grocery shopping</div>
+                      <div class="right clearfix">
+                          <div class="item__value">- 300.10</div>
+                          <div class="item__percentage">10%</div>
+                          <div class="item__delete">
+                              <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  
+              </div>
+          </div>
+      </div>
+      <script src="{static 'js/budget.js'}"></script>
+      
+  </div>
+
+
+{% endblock %}
+

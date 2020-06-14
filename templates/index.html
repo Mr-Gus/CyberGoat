@@ -1,55 +1,35 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
 {%load static%}
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}"/>
-<br><br><br><br>
-
-  <form   method="POST" action="{% url 'members' %}">
-<input class="members" type="text" name = "id" >
-{%csrf_token%}
-<input class="members" type="submit" value="Enter"/>
-</form>
-
-<p>Welcome to CyberGOAT's finance section. This area is being built to help assist individuals/entities 
-  with planning debt or future revenue. While still in its early stages, please take advantage of the debt payoff calculator created
-  just for you below. Real input will generate a beautiful graph and timeline for payoff.
+<br><br><br>
+<h1>Welcome To CyberGOAT</h1>
+<div class="greetings">
+<p>Whoever said money wasn't important probably just didn't know how to spend it. This site is developed to provide users a unique experience and access to tools 
+    designed to help cut debt and increase wealth.</p>
+    <br>
+    <p>
+    Curious about stocks but want to know the profits before selling? Create scenarios of buying an trading stocks with the stock scenarion calculator to get an idea
+    of how much you could be profiting in the market. At last, take advantage of the search engine that returns  a brief overview of a company's financial profile and general information.
 </p>
-<br><br>
-  <!--Payoff Calculator-->
-  <div class="creditCalculator">
-    <br><br>
-  <h2>Debt Payoff Calculator </h2>
-  <br>
-  <form method='POST' action ="{% url 'home' %}">
-     <label for="balance">Current Balance  :</label>
-          <input type="number" step="any" name="balance" maxlength="11" placeholder="6200.00" />
-          <br>
-           <label for="apr">APR ( 0 to 40% )  :</label>
-        <input type="number" step="any" name="apr" maxlength="6" min="0" max="40" class="apr" placeholder="19.02"/>
-        <br>
-         <label for="payment">Monthly Payment:</label>
-      <input type="number" step="any" name="minimum" maxlength="11" placeholder="200.00"/>
-        <br><br><br><br>
-        <input type="submit" class="btn" value="Calculate" />
-        {% csrf_token %}
-      </form>
+<br>
+<p>
+ Planning debt out just got a whole lot simpler with the finance section. Tired of manually calculating your credit card debt/house mortgage? Play with the debt
+ calculator which provides a beautiful timeline of your estimated payoff and interest in months. Also, take a peek at our budget section under development which will
+ provide users the ability to plan their monthly expenses and revenue beforehand.
 
-      <br><br><br>
-   
-      {%if report%}
-      <div class="graph">
-        <img class="graph" src="{% static "images/graph.png" %}" alt="Try me! Calculate your debt.">
-      
-      <br><br>
-      
-     <b><p>{{report}}</p></b> 
-      {%endif%}
+</p>
 
-      {%if error%}
-     <b><p class="error">{{error}}</p></b> 
-      {%endif%}
-</div> 
-    
+</div>
+
+<div class="container">
+    <img class="image1" src="{% static "images/frontpage/debt_calc.png" %}" alt="CyberGOAT">
+<br>
+<img class="image2" src="{% static "images/frontpage/stocks.png" %}" alt="CyberGOAT">
+
+</div>
+
+
 {% endblock %}
-
