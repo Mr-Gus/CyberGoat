@@ -24,7 +24,7 @@ def stock_calc(price_paid, quantity, sell_price):
 
 
 stocks = ['MSFT','AAPL','JPM','V','NKE','LMT','LDOS','ABT','PYPL','SBUX','T',
- 'MA','AAL','DIS','ABBV','NOW','DXCM', 'ADDYY','WMT']
+ 'MA','AAL','DIS','ABBV','NOW','DXCM', 'ADDYY','WMT','TSLA']
 
 def stock_search(search=random.choice(stocks)):
     

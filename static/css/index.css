@@ -9,33 +9,22 @@ h1,h2{
 
 .greetings{
     color: white;
-    width: 50%;
+    width: 35%;
     text-align: left;
-    margin-top: 10%;
+    margin-top: 8%;
     font-weight: 400;
     font-size: large;
     letter-spacing: 2px;
     position: absolute;
     left: 80px;
     
-   
-
 
 }
 
-.image1{
-   
-    height:300px;   
-    position: absolute;
-    right: 250px;
-    top:30%;
-}
 
+.example{
+    position: relative;
+    left:70%;
+    width: 40%;
 
-.image2{
-   
-    height:300px;   
-    position: absolute;
-    top:65%;
-    right: 80px;
 }
