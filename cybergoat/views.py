@@ -66,9 +66,6 @@ def finance(request):
     return render(request, 'finance.html',{'month':month})
 
 
-def weather(request):
-    return render(request, 'weather.html',{})
-
 
 def member(request):
     #Will be replaced with different logging mechanism
