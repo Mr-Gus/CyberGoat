@@ -15,7 +15,6 @@ def percent_change(original, final):
     return(change)
 
 
-
 def stock_calc(price_paid, quantity, sell_price):
     total_gain= (sell_price - price_paid) * quantity
     amount_invested = price_paid * quantity
@@ -47,8 +46,7 @@ def stock_search(search=random.choice(stocks)):
 
     except Exception:
         pass 
-
+    
     return display1
 
 
-stock_search()
