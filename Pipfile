@@ -13,6 +13,7 @@ mysqlclient = "*"
 yfinance = "*"
 seaborn = "*"
 lxml = "*"
+npm = "*"
 
 [dev-packages]
 
