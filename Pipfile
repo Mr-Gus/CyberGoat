@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 matplotlib = "*"
 requests = "*"
-django = "==3.0.7"
 numpy = "*"
 django-bootstrap4 = "*"
 mysqlclient = "*"
@@ -14,8 +13,12 @@ yfinance = "*"
 seaborn = "*"
 lxml = "*"
 npm = "*"
+bcrypt = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.8"
+
+[packages.django]
+extras = [ "argon2",]
