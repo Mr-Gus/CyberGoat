@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from cyberapp.programs import money, stocks, members
+from cyberapp.programs import money, stocks, members, sitemap
 from django.contrib.auth.decorators import login_required
 import datetime
 import subprocess
@@ -7,10 +7,8 @@ import os
 
 
 def home(request):
-   
-
-
-    return render(request, 'index.html',{})
+    description, keyword = sitemap.site_description()
+    return render(request, 'index.html',{'description':description, 'keyword': keyword})
 
 
 def stockPage(request):
@@ -67,6 +65,11 @@ def finance(request):
 
 
 
+def about(request):
+    return render(request, 'about.html', {})
+
+
+@login_required
 def member(request):
     #Will be replaced with different logging mechanism
     if request.method == 'POST':
@@ -77,13 +80,9 @@ def member(request):
     return render(request, 'members.html',{})
 
 
-def about(request):
-    return render(request, 'about.html', {})
-
-
 @login_required
 def login(request):
-    return render(request,'test.html', {})
+    return render(request,'members.html', {})
 
 
 @login_required
