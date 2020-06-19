@@ -164,7 +164,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'mail.privateemail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'support@cybergoat.net'
-EMAIL_HOST_PASSWORD = '2C8jX6sTr%8#!3EeL9u%X2UaxPH^6Ywy'
+EMAIL_HOST_PASSWORD = '7f*UT55h526S*z5!Jc6qDUuVE@wo^63'
 
 DEFAULT_FROM_EMAIL='support@cybergoat.net'
 
