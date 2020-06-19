@@ -158,14 +158,4 @@ ACCOUNT_UNIQUE_USERNAME = True
 ACCOUNT_EMAIL_REQUIRED = True 
 ACCOUNT_UNIQUE_EMAIL = True
 
-#email config
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #new
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'mail.privateemail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'support@cybergoat.net'
-EMAIL_HOST_PASSWORD = '7f*UT55h526S*z5!Jc6qDUuVE@wo^63'
-
-DEFAULT_FROM_EMAIL='support@cybergoat.net'
-
 
