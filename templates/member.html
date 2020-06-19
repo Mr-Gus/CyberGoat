@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {%load static%}
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static "css/login.css" %}"/>
+<link rel="stylesheet" type="text/css" href="{% static "css/member.css" %}"/>
 <br><br><br><br>
-<div class="login">
+<div class=profile>
+    {%if user.is_authenticated%}
+    <h1>Hi, {{user.username.title}}!</h1>
+    {%endif%}
+</div>
 <h2>You are now logged in!</h2>
 <br><br>
 <p>The site is still under development, but check back soon for more.</p>
-</div>
 {% endblock %}

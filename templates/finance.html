@@ -10,11 +10,7 @@
 <h1>The Finance Section</h1>
 <br><br><br>
 
-  <form   method="POST" action="{% url 'members' %}">
-<input class="members" type="text" name = "id" >
-{%csrf_token%}
-<input class="members" type="submit" value="Enter"/>
-</form>
+
 
 <p>Welcome to CyberGOAT's finance section. This area is being built to help assist individuals/entities 
   with planning debt or future revenue. While still in its early stages, please take advantage of the debt payoff calculator created
@@ -33,7 +29,7 @@
            <label for="apr">APR ( 0 to 40% )  :</label>
         <input type="number" step="any" name="apr" maxlength="6" min="0" max="40" class="apr" placeholder="19.02"/>
         <br>
-         <label for="payment">Montly Payment:</label>
+         <label for="payment">Monthly Payment:</label>
       <input type="number" step="any" name="minimum" maxlength="11" placeholder="200.00"/>
         <br><br><br><br>
         <input type="submit" class="btn" value="Calculate" />

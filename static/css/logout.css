@@ -1,5 +1,14 @@
-.logout{
-  margin-top: 30%;
-  color: white;
-  text-align: center;
+h2{
+  color:#f74747;
+  font-weight: 700;
+}
+
+
+p{
+  color:white;
+}
+
+h2,p{
+
+  text-align:left;
 }

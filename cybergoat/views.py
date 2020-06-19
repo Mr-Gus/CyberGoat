@@ -7,8 +7,9 @@ import os
 
 
 def home(request):
-    description, keyword = sitemap.site_description()
-    return render(request, 'index.html',{'description':description, 'keyword': keyword})
+    description, keyword, name = sitemap.site_description()
+    print(description)
+    return render(request, 'index.html',{'description':description, 'keyword': keyword, 'name':name})
 
 
 def stockPage(request):
@@ -69,20 +70,14 @@ def about(request):
     return render(request, 'about.html', {})
 
 
+
+def login(request):
+    return render(request,'member.html', {})
+
 @login_required
 def member(request):
-    #Will be replaced with different logging mechanism
-    if request.method == 'POST':
-        id = request.POST['id']
-        user = members.log_user(id)
-    else:
-        user= members.log_user()
-    return render(request, 'members.html',{})
+    return render(request,'member.html', {})
 
-
-@login_required
-def login(request):
-    return render(request,'members.html', {})
 
 
 @login_required

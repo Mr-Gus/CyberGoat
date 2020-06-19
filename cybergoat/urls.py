@@ -21,13 +21,13 @@ from . import views
 
 urlpatterns = [
     url('^admin/', admin.site.urls),
+    url(r'^account/',include('allauth.urls')),
     url(r'^$', views.home, name = 'home'),
     url(r'^about/', views.about, name='about'),
     url(r'^stocks/', views.stockPage, name='stocks'),
     url(r'finance/',views.finance, name='finance'),
-    url(r'member/', views.member, name='members'),
-    url(r'^accounts/', include('accounts.urls', namespace='accounts')),
-    url(r'^accounts/',include('django.contrib.auth.urls')),
-    url(r'^test/', views.login, name='test'),
+    url(r'^login/', views.login, name='login'),
+    url(r'^member/', views.member, name='member'),
+
     url(r'^logout/', views.logout, name='logout'),
 ]

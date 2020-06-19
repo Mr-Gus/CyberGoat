@@ -9,7 +9,7 @@
 <div class= 'login'>
   <h3>Log In</h3>
   <br>
-  <form method ='post' autocomplete="off" >
+  <form method ='post'>
     {% csrf_token %}
     {% bootstrap_form form %}
     <input type ='submit' class='btn btn-danger' value= 'GO'>

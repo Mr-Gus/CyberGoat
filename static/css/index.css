@@ -16,7 +16,7 @@ h1,h2{
     font-size: large;
     letter-spacing: 2px;
     position: absolute;
-    left: 80px;
+    left: 40px;
     
 
 }
@@ -25,7 +25,7 @@ h1,h2{
 .example{
     position: absolute;
     left: 53%;
-    top:40%;
+    top:45%;
 }
 
 .mySlides {

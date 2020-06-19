@@ -1,15 +1,40 @@
-<!DOCTYPE html>
 
-{% load static %}
-{% load bootstrap4 %}
 
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content={{description}}>
+<!DOCTYPE html>                                                                                                                                                                                           
+                                                                                                                                                                                                          
+{% load static %}                                                                                                                                                                                         
+{% load bootstrap4 %}                                                                                                                                                                                     
+                                                                                                                                                                                                          
+<html lang="en" dir="ltr">                                                                                                                                                                                
+  <head>                                                                                                                                                                                                  
+    <meta charset="utf-8">                                                                                                                                                                                
+    <meta name ="application-name" content={{name}}>                                                                                                                                                      
+    <meta name="description" content={{description}}                                                                                                                                                      
+    <meta name="image" content={% static "/images/goat.png" %}>                                                                                                                                           
+                                                                                                                                                                                                          
+                                                                                                                                                                                                          
+                                                                                                                                                                                                          
+<!-- Google / Search Engine Tags -->                                                                                                                                                                      
+                                                                                                                                                                                                          
+<meta itemprop="application-name" content={{name}}>                                                                                                                                                       
+<meta itemprop="description" content={{description}}>                                                                                                                                                     
+<meta itemprop="image" content={% static "/images/goat.png" %}>                                                                                                                                           
+                                                                                                                                                                                                          
+                                                                                                                                                                                                          
+<!-- Facebook Meta Tags -->                                                                                                                                                                               
+<meta property="og:url" content="https://www.cybergoat.net">                                                                                                                                              
+<meta proerty = "og:type" content="website"                                                                                                                                                               
+<meta property="og:title" content={{name}}                                                                                                                                                                
+<meta property="og:description" content={{description}}>                                                                                                                                                  
+<meta property="og:image" content="">
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CyberGOAT">
+<meta name="twitter:description" content="CyberGOAT is a site designed to help individuals take back control of their finances by providing free, hard to find tools for budgeting, calculating debt and m
+ore.">
+<meta name="twitter:image" content="">
     <meta name="keywords" content={{keywords}}>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>CyberGOAT</title>
 <link id="icon" rel="shortcut icon" href="{% static "images/goat.png" %}">
     <!-- Latest compiled and minified CSS -->
@@ -20,52 +45,64 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="{% static "css/master.css" %}"/>
-
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand -->
-    <a class="navbar-brand" href="{% url 'home' %}">CyberGOAT <img class="logo" src="{% static "images/goat.png" alt="CG" %}"></a>
-    <ul class="navbar-nav">
-      <li class="navbar-nav navbar-left"><a href="{%url 'finance' %}">Finance</a></li>
-      <li class="navbar-nav navbar-left"><a href="{%url 'stocks' %}">Stocks</a></li>
-    </ul>
-
-
-  <!-- Links -->
-  <ul class="navbar-nav navbar-right ml-auto" >
-    <li class="nav navbar-right">
-      <ul class='nav navbar-nav '>
-
-
-
+    
           {% if user.is_authenticated %}
-<button >
-          <li><a class="btn"  href='{% url 'accounts:logout' %}'>Logout</a></li>
+             <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                 <!-- Brand -->
+      <a class="navbar-brand" href="{% url 'home' %}">CyberGOAT <img class="logo" src="{% static "images/goat.png" alt="CG" %}"></a>
+      <ul class="navbar-nav">
+          <li class="navbar-nav navbar-left"><a href="{% url 'member' %}">MyZone</a></li> 
+     <li class="navbar-nav navbar-left"><a href="{%url 'finance' %}">Finance</a></li>
+       <li class="navbar-nav navbar-left"><a href="{%url 'stocks' %}">Stocks</a></li>
+</ul>
+    <ul class="navbar-nav navbar-right ml-auto" >
+       <li class="nav navbar-right">
+          <ul class='nav navbar-nav '>
+                                                                                                                                                                                                       
+            <button >
+              <a class="btn" href='{%url 'about'%}'>About Us</a>
+    </button>
+ 
+      </li>
+    </ul>
+<button>
+  <li><a class="btn"  href='{% url 'account_logout' %}'>Logout</a></li>
 </button>
-          {% else %}
-          <button >
-            <a class="btn" href='{%url 'about'%}'>About Us</a>
-  </button>
-<button >
-          <a class="btn" href='{%url 'accounts:signup'%}'>Sign Up</a>
-</button>
+  {% else %}
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<!-- Brand -->
+<a class="navbar-brand" href="{% url 'home' %}">CyberGOAT <img class="logo" src="{% static "images/goat.png" alt="CG" %}"></a>
+<ul class="navbar-nav">
 
-    </li>
-  </ul>
+  <li class="navbar-nav navbar-left"><a href="{%url 'finance' %}">Finance</a></li>
+<li class="navbar-nav navbar-left"><a href="{%url 'stocks' %}">Stocks</a></li>
+</ul>
+
+
+<!-- Links -->
+<ul class="navbar-nav navbar-right ml-auto" >
+<li class="nav navbar-right">
+<ul class='nav navbar-nav '>
+  
   <button >
-            <a class="btn" href='{%url 'accounts:login'%}'>Login</a>
-  </button>
-            {% endif %}
-
+    <a class="btn" href='{%url 'about'%}'>About Us</a>
+</button>
+<button >
+  <a class="btn" href='{%url 'account_signup'%}'>Sign Up</a>
+</button>
+</li>
+</ul>
+<button >
+    <a class="btn" href='{%url 'account_login'%}'>Login</a>
+</button>
+    {% endif %}
 </nav>
-
-    <div class='container mycontent'>
-    {% block content %}
-
-    {% endblock %}
+<div class='container mycontent'>
+{% block content %}
+{% endblock %}
 </div>
-  </body>
+</body>
 </html>
