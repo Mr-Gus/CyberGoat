@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'REMOVED'
+SECRET_KEY = '_^sa-o6lar8t$&b8&pb=9@8nl$1g)6u6!$&4vltokb%7$8q-v4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.cybergoat.net','cybergoat.net']
 
 
 # Application definition
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
-    
+
 ]
 
 
@@ -79,14 +79,25 @@ WSGI_APPLICATION = 'cybergoat.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+'''
 
+DATABASES = {
+    'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'myappdb',
+            'USER': 'myappuser',
+            'PASSWORD':'c7TZ2C55dC$Q7!#A5EW%2Z!Wz9!9S^QD%kV!$^wR',
+            'HOST': 'MrGustavo-1687.postgres.pythonanywhere-services.com',
+            'PORT': 11687,
+     }
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -153,9 +164,26 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend', #new
 )
 
+
+#Header Info
+SECURE_HSTS_SECONDS = 31536000
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_SSL_REDIRECT = True
+
+#signup
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_UNIQUE_USERNAME = True
 ACCOUNT_EMAIL_REQUIRED = True 
 ACCOUNT_UNIQUE_EMAIL = True
+
+#email config
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #new
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'cybergoatmail'
+EMAIL_HOST_PASSWORD = 'R^y#f42c8^pbrWJBGS#Yf6474na!E48&'
+
+DEFAULT_FROM_EMAIL='cybergoatmail@gmail.com'
 
 

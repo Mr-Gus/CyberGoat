@@ -4,52 +4,20 @@
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}"/>
-<br><br><br>
-<h1>Welcome To CyberGOAT</h1>
 
 
-<style>
-    
-    .w3-left, .w3-right, .w3-badge {cursor:pointer}
-    .w3-badge {height:13px;width:13px;padding:0}
-    </style>
-    <body>
-    
-    
-    
-    <div class="example" style="max-width:800px">
-        <img class="mySlides" src="{% static 'images/frontpage/debt_calc.png'%}" >
-        <img class="mySlides" src="{% static 'images/frontpage/company_search.png'%}" >
-        <img class="mySlides" src="{% static 'images/frontpage/stocks.png'%}" >
-        <img class="mySlides" src="{% static 'images/frontpage/budget_planner.png'%}" >
-
-        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-        <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-        <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-      </div>
-      <h5>Site Preview</h5>
-
-    </div>
-    
-   
-
-<div class="greetings">
-<p>Whoever said money wasn't important probably just didn't know how to spend it. This site is developed to provide users a unique experience and access to tools 
-    designed to help cut debt and increase wealth.</p>
-    <br>
-    <p>
-        Want to invest in the stock market? Or maybe you already do! Either way 
-        CyberGOAT has designed a tool to help you figure out how much you'll make before you ever buy or sell a stock. 
-</p>
-<br>
-<p>
- Planning debt out just got a whole lot simpler with the finance section. Financing a new mortgage or interested in that new credit card? Let the debt calculator provides a beautiful timeline of your estimated payoff and interest in months. 
-</p>
+<div class="content">
+    <h1>Welcome To CyberGOAT</h1>
+    <br><br><br>
+    <video controls autoplay muted>
+                <source class="intro" src="{% static 'media/intro.mp4' %}" type="video/mp4"></source>
+        CyberGOAT couldn't play the video tag.
+      </video>
+      
 
 </div>
+
+
 <br><br><br><br><br><br><br>
 <script src="{% static 'js/index.js'%}"></script>
 

@@ -236,13 +236,13 @@ h2{
 
 .income {
   float: left;
-  width: 50%;
+  width: 45%;
   margin-right: 50px;
 }
 
 .expenses {
   float: left;
-  width: 475px;
+  width: 45%;
 }
 
 h2 {
